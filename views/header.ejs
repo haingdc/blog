@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Blog</title>
+<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<header>
+<h1><%= title %></h1>
+</header>
+
+<nav>
+<span><a title="Trang Chủ" href="/">Trang Chủ</a></span>
+<% if (user) { %>
+	<span><a href="/upload" title="Tải lên">upload</a></span>
+	<span><a title="Đăng bài" href="/post">Đăng bài</a></span>
+	<span><a title="Đăng xuất"   href="/logout">Đăng xuất</a></span>
+<% } else { %>
+	<span><a title="Đăng Nhập" href="/login">Đăng nhập</a></span>
+	<span><a title="Đăng Kí"   href="/reg">Đăng kí</a></span>	
+<% } %>
+</nav>
+
+<article>
+	<% if (success) { %>
+		<div><%= success %></div>
+	<% } %>
+	<% if (error) { %>
+		<div><%= error %></div>
+	<% } %>
